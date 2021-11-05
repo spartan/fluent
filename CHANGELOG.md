@@ -1,4 +1,11 @@
 # Changelog
+### [0.1.2](https://github.com/spartan/fluent/compare/v0.1.1...v0.1.2) (2021-11-05)
+
+
+### Fixes
+
+* Str::fromCsvFile skip empty lines ([cfb19ed](https://github.com/spartan/fluent/commit/cfb19edaabcc7f7ef4bbb38030809528386cdc3e))
+
 ### [0.1.1](https://github.com/spartan/fluent/compare/v0.1.0...v0.1.1) (2021-11-05)
 
 
