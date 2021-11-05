@@ -1,4 +1,11 @@
 # Changelog
+### [0.1.1](https://github.com/spartan/fluent/compare/v0.1.0...v0.1.1) (2021-11-05)
+
+
+### Fixes
+
+* Str::fromCsvFile always using header ([8011f02](https://github.com/spartan/fluent/commit/8011f020bfaa87d1c378110893564a2a24555007))
+
 ## 0.1.0 (2021-03-03)
 
 
