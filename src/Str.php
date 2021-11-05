@@ -477,6 +477,9 @@ class Str
 
         while (!feof($file)) {
             $line     = fgets($file);
+            if (!$line) {
+                continue;
+            }
             $result[] = $withHeader
                 ? array_combine($header, str_getcsv($line))
                 : str_getcsv($line);
