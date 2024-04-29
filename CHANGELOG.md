@@ -1,4 +1,11 @@
 # Changelog
+### [0.1.3](https://github.com/spartan/fluent/compare/v0.1.2...v0.1.3) (2024-04-29)
+
+
+### Fixes
+
+* compatibility with php 8.1 ([f120b5b](https://github.com/spartan/fluent/commit/f120b5b4bd1baeb6180210cbab3fdf49857a99ed))
+
 ### [0.1.2](https://github.com/spartan/fluent/compare/v0.1.1...v0.1.2) (2021-11-05)
 
 
