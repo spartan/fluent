@@ -75,8 +75,8 @@ namespace Spartan\Fluent;
  * @method self xpath(string $xpath, $useDomFallback = true) Run xpath on xml string
  * @method self split(string $separator = ",", int $limit = PHP_INT_MAX) Use javascript notation
  * @method self generate(string $values = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789") Generate a random string.
- * @method self|array fromCsvFile(bool $withHeader = self::WITH_HEADER) Load from csv file into an array
- * @method self|array toCsvFile(array $data, bool $withHeader = self::WITH_HEADER) Save string to a csv file
+ * @method self|array fromCsvFile(bool $withHeader = Str::WITH_HEADER) Load from csv file into an array
+ * @method self|array toCsvFile(array $data, bool $withHeader = Str::WITH_HEADER) Save string to a csv file
  * @method self|array constants($visibility = null) @param mixed $subject
  * @method self|array properties($visibility = null) @param      $subject
  * @method self|array methods($visibility = null) @param      $subject
@@ -235,7 +235,7 @@ class Fluent implements \ArrayAccess, \Iterator
     /**
      * @inheritDoc
      */
-    public function offsetExists($offset)
+    public function offsetExists($offset): bool
     {
         return is_array($this->data)
             && array_key_exists($offset, $this->data);
@@ -244,7 +244,7 @@ class Fluent implements \ArrayAccess, \Iterator
     /**
      * @inheritDoc
      */
-    public function offsetGet($offset)
+    public function offsetGet($offset): mixed
     {
         return is_array($this->data)
             ? $this->data[$offset] ?? null
@@ -254,7 +254,7 @@ class Fluent implements \ArrayAccess, \Iterator
     /**
      * @inheritDoc
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $value): void
     {
         is_array($this->data)
             ? $this->data[$offset] = $value
@@ -264,7 +264,7 @@ class Fluent implements \ArrayAccess, \Iterator
     /**
      * @inheritDoc
      */
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
         if (is_array($this->data)) {
             unset($this->data[$offset]);
@@ -274,7 +274,7 @@ class Fluent implements \ArrayAccess, \Iterator
     /**
      * @inheritDoc
      */
-    public function current()
+    public function current(): mixed
     {
         return $this->data[$this->position];
     }
@@ -282,7 +282,7 @@ class Fluent implements \ArrayAccess, \Iterator
     /**
      * @inheritDoc
      */
-    public function next()
+    public function next(): void
     {
         ++$this->position;
     }
@@ -290,7 +290,7 @@ class Fluent implements \ArrayAccess, \Iterator
     /**
      * @inheritDoc
      */
-    public function key()
+    public function key(): mixed
     {
         return $this->position;
     }
@@ -298,7 +298,7 @@ class Fluent implements \ArrayAccess, \Iterator
     /**
      * @inheritDoc
      */
-    public function valid()
+    public function valid(): bool
     {
         return isset($this->data[$this->position]);
     }
@@ -306,7 +306,7 @@ class Fluent implements \ArrayAccess, \Iterator
     /**
      * @inheritDoc
      */
-    public function rewind()
+    public function rewind(): void
     {
         $this->position = 0;
     }
